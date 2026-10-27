@@ -145,21 +145,45 @@ public class Chef {
     }
 
     public void longMethod() {
-        // Long Method (too many tasks in a single method)
+        // Método Refatorado: Diminuição do Método Longo
         System.out.println("Chef is handling many tasks in a single method");
-        this.bakePizza("Cheese");
+        this.preparePizzaOrder("Cheese");
+        this.finishKitchenWork();
+        this.updateContactInfo("John", "Doe", "123 Street", "555-5555", "john.doe@example.com");
+        this.notifyCustomer();
+        this.applyRewards();
+        this.serveCustomer("cold pizza");
+        this.runInternalRoutines();
+    }
+
+    private void preparePizzaOrder(String pizzaType) {
+        this.bakePizza(pizzaType);
         this.cutPizzaAndPutInBox();
         this.deliverPizza();
+    }
+
+    private void finishKitchenWork() {
         this.hurryUp();
         this.cleanKitchen();
-        this.updateContactInfo("John", "Doe", "123 Street", "555-5555", "john.doe@example.com");
+    }
+
+    private void notifyCustomer() {
         this.notifyForPromotion();
         this.notifyForDiscount();
         this.notifyForNewArrivals();
+    }
+
+    private void applyRewards() {
         this.applyDiscount();
         this.applyLoyaltyPoints();
-        this.handleComplaint("cold pizza");
+    }
+
+    private void serveCustomer(String complaint) {
+        this.handleComplaint(complaint);
         this.askForReceipt();
+    }
+
+    private void runInternalRoutines() {
         this.chainOfMethods();
         this.middlemanMethod();
         this.accessInternalDetails();
