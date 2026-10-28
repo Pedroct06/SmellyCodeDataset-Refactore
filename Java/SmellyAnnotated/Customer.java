@@ -46,16 +46,25 @@ public class Customer {
         // Dead Code (method is never called)
     }
 
+    // Redistribuição de responsabilidades, separando o pedido da conta da reclamação
+    public void complainAndAskForReceipt(){
+        this.longComplaintMethod();
+        this.askForReceipt();
+    }
+
+    // Método refatorado para diminuir a quantidade de chamadas a outros métodos dentro dele
+    // também redução de responsabilidades, delegando askForReceipt para um método acima
     public void longComplaintMethod() {
         // Long Method (too many complaints handled in one method)
         System.out.println("Customer is complaining about many things");
-        this.complain("Pizza is cold");
-        this.complain("Pizza is late");
-        this.complain("Wrong pizza delivered");
-        this.complain("Pizza is burnt");
-        this.complain("Too little cheese");
-        this.complain("Pizza is undercooked");
-        this.askForReceipt();
+        String[] complaints = {"Pizza is cold", "Pizza is late", "Wrong pizza delivered", "Pizza is burnt", "Too little cheese", "Pizza is undercooked"};
+        this.handleMultipleComplaints(complaints);
+    }
+
+    private void handleMultipleComplaints(String[] complaints){
+        for (String c : complaints) {
+            this.complain(c);
+        }
     }
 
     public void orderWithUnnecessaryDetails(String pizzaType, String size, String crustType, String toppings, boolean extraCheese, String discountCode) {
