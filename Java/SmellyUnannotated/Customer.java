@@ -22,6 +22,11 @@ public class Customer {
         this.frequentCustomerDiscount = false;
     }
 
+    public void orderPizza(String pizzaType) {
+        System.out.println("Customer is placing an order for " + pizzaType + " pizza.");
+        this.pizzaShop.receiveOrder(pizzaType);
+    }
+
     public void complain(String complaint) {
         System.out.println("Customer is complaining: " + complaint);
         this.pizzaShop.getCashier().calmCustomerDown();
@@ -47,7 +52,7 @@ public class Customer {
 
     public void orderWithUnnecessaryDetails(String pizzaType, String size, String crustType, String toppings, boolean extraCheese, String discountCode) {
         System.out.println("Placing a detailed order for " + pizzaType + " pizza with " + size + ", " + crustType + ", " + toppings + ", extra cheese: " + extraCheese + ", discount code: " + discountCode);
-        this.pizzaShop.orderPizza(pizzaType);
+        this.orderPizza(pizzaType);
     }
 
     public void duplicateComplaint() {
