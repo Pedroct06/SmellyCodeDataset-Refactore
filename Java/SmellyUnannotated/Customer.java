@@ -134,9 +134,6 @@ public class Customer {
         }
     }
 
-    public void refusedBequest() {
-    }
-
     public void accessInternalDetails() {
         System.out.println("Accessing internal details of PizzaShop: " + pizzaShop.getCashier().getChef().isBusy());
     }
