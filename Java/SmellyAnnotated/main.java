@@ -25,7 +25,7 @@ public class main {
 
             Shop shop = new Shop();
             Customer customer = new Customer(shop);
-            customer.orderPizza("Cheese");
+            shop.receiveOrder("Cheese");
             customer.complain("The pizza is too cold.");
 
             long endTime = System.nanoTime();
