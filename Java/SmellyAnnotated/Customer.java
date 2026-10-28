@@ -28,11 +28,6 @@ public class Customer {
         this.frequentCustomerDiscount = false; // Primitive Obsession
     }
 
-    public void orderPizza(String pizzaType) {
-        System.out.println("Customer is placing an order for " + pizzaType + " pizza.");
-        this.pizzaShop.receiveOrder(pizzaType); // Feature Envy (refers to another class to do its work)
-    }
-
     public void complain(String complaint) {
         System.out.println("Customer is complaining: " + complaint);
         this.pizzaShop.getCashier().calmCustomerDown(); // Inappropriate Intimacy (accessing another object's internal details)
@@ -61,7 +56,7 @@ public class Customer {
     public void orderWithUnnecessaryDetails(String pizzaType, String size, String crustType, String toppings, boolean extraCheese, String discountCode) {
         // Long Parameter List (too many parameters in the method)
         System.out.println("Placing a detailed order for " + pizzaType + " pizza with " + size + ", " + crustType + ", " + toppings + ", extra cheese: " + extraCheese + ", discount code: " + discountCode);
-        this.orderPizza(pizzaType);
+        this.pizzaShop.receiveOrder(pizzaType);
     }
 
     public void duplicateComplaint() {
